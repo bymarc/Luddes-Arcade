@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>☄️ Meteor Defense - Save the Station!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="stars"></div>
+        <div class="stars stars-2"></div>
+        
+        <div class="game-screen" id="menu-screen">
+            <div class="menu-content">
+                <div class="menu-icon">🛸</div>
+                <h1>METEOR DEFENSE</h1>
+                <p class="tagline">Protect the Space Station!</p>
+                
+                <div class="menu-stats">
+                    <div class="stat-box">
+                        <span class="stat-label">Best Survival Time</span>
+                        <span class="stat-value" id="best-time">0:00</span>
+                    </div>
+                </div>
+                
+                <div class="instructions">
+                    <p>☄️ Tap meteors to destroy them</p>
+                    <p>🛸 Protect your space station</p>
+                    <p>⏱️ Survive as long as possible</p>
+                </div>
+                
+                <button class="play-btn" id="start-btn">
+                    <span>DEFEND!</span>
+                </button>
+                
+                <a href="../index.html" class="back-link">← Back to Arcade</a>
+            </div>
+        </div>
+
+        <div class="game-screen hidden" id="game-screen">
+            <div class="game-hud">
+                <div class="hud-left">
+                    <div class="health-container">
+                        <span class="health-label">STATION</span>
+                        <div class="health-bar">
+                            <div class="health-fill" id="health-fill"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hud-center">
+                    <div class="timer-display">
+                        <span class="timer-label">SURVIVAL</span>
+                        <span class="timer-value" id="survival-time">0:00</span>
+                    </div>
+                </div>
+                <div class="hud-right">
+                    <div class="score-display">
+                        <span class="score-label">DESTROYED</span>
+                        <span class="score-value" id="meteors-destroyed">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="game-arena" id="game-arena">
+                <div class="space-station" id="space-station">
+                    <div class="station-body">🛸</div>
+                    <div class="station-shield hidden" id="station-shield"></div>
+                </div>
+            </div>
+            
+            <div class="wave-indicator hidden" id="wave-indicator">
+                <span>WAVE <span id="wave-number">1</span></span>
+            </div>
+            
+            <div class="active-effects" id="active-effects"></div>
+        </div>
+
+        <div class="game-screen hidden" id="result-screen">
+            <div class="result-content">
+                <div class="result-icon">💥</div>
+                <h2>STATION DESTROYED</h2>
+                <div class="result-stats">
+                    <div class="result-stat large">
+                        <span class="label">Survival Time</span>
+                        <span class="value" id="final-time">0:00</span>
+                    </div>
+                    <div class="result-stat">
+                        <span class="label">Meteors Destroyed</span>
+                        <span class="value" id="final-destroyed">0</span>
+                    </div>
+                    <div class="result-stat">
+                        <span class="label">Waves Survived</span>
+                        <span class="value" id="final-waves">0</span>
+                    </div>
+                    <div class="result-stat">
+                        <span class="label">Accuracy</span>
+                        <span class="value" id="final-accuracy">0%</span>
+                    </div>
+                </div>
+                <div class="result-record hidden" id="new-record">🏆 NEW RECORD! 🏆</div>
+                <div class="result-buttons">
+                    <button class="play-btn" id="play-again-btn">Try Again</button>
+                    <button class="menu-btn" id="menu-btn">Main Menu</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="countdown-overlay hidden" id="countdown">
+            <div class="countdown-number" id="countdown-number">3</div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
+
