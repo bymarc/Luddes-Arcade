@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>🎯 Slingshot Smash!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-screen" id="menu-screen">
+            <div class="menu-content">
+                <div class="menu-icon">🎯</div>
+                <h1>SLINGSHOT SMASH</h1>
+                <p class="tagline">Destroy the structures!</p>
+                
+                <div class="instructions">
+                    <p>🎯 Drag back on the slingshot to aim</p>
+                    <p>🚀 Release to launch!</p>
+                    <p>💥 Destroy all blocks to win</p>
+                </div>
+                
+                <button class="play-btn" id="start-btn">
+                    <span>START GAME</span>
+                </button>
+                
+                <a href="../index.html" class="back-link">← Back to Arcade</a>
+            </div>
+        </div>
+
+        <div class="game-screen hidden" id="game-screen">
+            <div class="game-hud">
+                <div class="hud-left">
+                    <div class="level-display">
+                        <span class="hud-label">LEVEL</span>
+                        <span class="hud-value" id="level-number">1</span>
+                    </div>
+                </div>
+                <div class="hud-center">
+                    <div class="ammo-display">
+                        <span id="ammo-icons">🔴🔴🔴</span>
+                    </div>
+                </div>
+                <div class="hud-right">
+                    <div class="score-display">
+                        <span class="hud-label">SCORE</span>
+                        <span class="hud-value" id="score">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <canvas id="game-canvas"></canvas>
+            
+            <div class="game-message hidden" id="game-message">
+                <span id="message-text">Level Complete!</span>
+            </div>
+            
+            <button class="restart-btn" id="restart-btn">↺</button>
+        </div>
+
+        <div class="game-screen hidden" id="result-screen">
+            <div class="result-content">
+                <div class="result-icon" id="result-icon">🏆</div>
+                <h2 id="result-title">Level Complete!</h2>
+                <div class="result-stats">
+                    <div class="result-stat">
+                        <span class="label">Score</span>
+                        <span class="value" id="final-score">0</span>
+                    </div>
+                    <div class="result-stat">
+                        <span class="label">Shots Used</span>
+                        <span class="value" id="shots-used">0</span>
+                    </div>
+                    <div class="result-stat">
+                        <span class="label">Blocks Destroyed</span>
+                        <span class="value" id="blocks-destroyed">0</span>
+                    </div>
+                </div>
+                <div class="result-buttons">
+                    <button class="play-btn" id="next-level-btn">Next Level</button>
+                    <button class="menu-btn" id="menu-btn">Main Menu</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-screen hidden" id="gameover-screen">
+            <div class="result-content">
+                <div class="result-icon">😢</div>
+                <h2>Out of Ammo!</h2>
+                <p class="gameover-text">You ran out of projectiles</p>
+                <div class="result-buttons">
+                    <button class="play-btn" id="retry-btn">Retry Level</button>
+                    <button class="menu-btn" id="menu-btn-2">Main Menu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
+

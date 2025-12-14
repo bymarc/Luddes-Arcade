@@ -202,6 +202,17 @@
                 0 0 60px rgba(0, 212, 255, 0.3);
         }
 
+        .game-card.slingshot {
+            --accent: #FF6B35;
+        }
+
+        .game-card.slingshot:hover {
+            border-color: var(--accent);
+            box-shadow: 
+                0 20px 40px rgba(255, 107, 53, 0.2),
+                0 0 60px rgba(255, 107, 53, 0.3);
+        }
+
         .game-icon {
             font-size: 5rem;
             margin-bottom: 1rem;
@@ -385,6 +396,21 @@
                     <span class="tag">1 Player</span>
                     <span class="tag">Mobile Ready</span>
                     <span class="tag">Survival</span>
+                </div>
+                <span class="play-btn">Play Now</span>
+            </a>
+
+            <a href="slingshot/index.html" class="game-card slingshot">
+                <span class="game-icon">🎯</span>
+                <h2 class="game-title">Slingshot Smash</h2>
+                <p class="game-description">
+                    Launch projectiles at structures and knock them down! Destroy 
+                    all targets with limited ammo. Physics-based destruction fun!
+                </p>
+                <div class="game-tags">
+                    <span class="tag">1 Player</span>
+                    <span class="tag">Mobile Ready</span>
+                    <span class="tag">Physics</span>
                 </div>
                 <span class="play-btn">Play Now</span>
             </a>
