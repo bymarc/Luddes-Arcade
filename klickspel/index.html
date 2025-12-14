@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⌨️ Klickspel - Return Key Showdown!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="scanlines"></div>
+        <header>
+            <h1>KLICKSPEL</h1>
+            <p class="subtitle">Return Key Showdown</p>
+        </header>
+
+        <div class="game-screen" id="menu-screen">
+            <div class="arcade-frame">
+                <h2>SELECT MODE</h2>
+                <div class="mode-buttons">
+                    <button class="arcade-btn" id="solo-btn">
+                        <span class="btn-icon">👤</span>
+                        <span class="btn-text">SOLO</span>
+                        <span class="btn-desc">Beat your record</span>
+                    </button>
+                    <button class="arcade-btn" id="versus-btn">
+                        <span class="btn-icon">⚔️</span>
+                        <span class="btn-text">VS MODE</span>
+                        <span class="btn-desc">2 Players</span>
+                    </button>
+                </div>
+                <div class="high-score">
+                    <span>HIGH SCORE:</span>
+                    <span id="high-score-display">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-screen hidden" id="solo-screen">
+            <div class="timer-display">
+                <div class="timer-ring">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="timer-bg" cx="50" cy="50" r="45"/>
+                        <circle class="timer-progress" id="solo-timer-ring" cx="50" cy="50" r="45"/>
+                    </svg>
+                    <span class="timer-text" id="solo-timer">10</span>
+                </div>
+            </div>
+            <div class="score-display solo">
+                <div class="score-value" id="solo-score">0</div>
+                <div class="score-label">CLICKS</div>
+            </div>
+            <div class="key-indicator">
+                <div class="key-cap" id="solo-key">
+                    <span>↵ RETURN</span>
+                </div>
+                <p class="instruction">Mash RETURN! Press SPACE to dodge obstacles!</p>
+            </div>
+            <button class="back-btn" id="solo-back">← BACK</button>
+        </div>
+
+        <div class="game-screen hidden" id="versus-screen">
+            <div class="timer-display">
+                <div class="timer-ring small">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="timer-bg" cx="50" cy="50" r="45"/>
+                        <circle class="timer-progress" id="versus-timer-ring" cx="50" cy="50" r="45"/>
+                    </svg>
+                    <span class="timer-text" id="versus-timer">10</span>
+                </div>
+            </div>
+            <div class="versus-arena">
+                <div class="player-zone player1">
+                    <div class="player-label">PLAYER 1</div>
+                    <div class="player-key">Q</div>
+                    <div class="player-score" id="p1-score">0</div>
+                    <div class="click-bar">
+                        <div class="click-fill" id="p1-bar"></div>
+                    </div>
+                </div>
+                <div class="vs-divider">
+                    <span>VS</span>
+                </div>
+                <div class="player-zone player2">
+                    <div class="player-label">PLAYER 2</div>
+                    <div class="player-key">P</div>
+                    <div class="player-score" id="p2-score">0</div>
+                    <div class="click-bar">
+                        <div class="click-fill" id="p2-bar"></div>
+                    </div>
+                </div>
+            </div>
+            <p class="versus-instruction">P1: Q to click, W to dodge | P2: P to click, O to dodge</p>
+            <button class="back-btn" id="versus-back">← BACK</button>
+        </div>
+
+        <div class="game-screen hidden" id="result-screen">
+            <div class="result-content">
+                <h2 id="result-title">GAME OVER</h2>
+                <div class="result-stats" id="result-stats"></div>
+                <div class="result-buttons">
+                    <button class="arcade-btn small" id="play-again">PLAY AGAIN</button>
+                    <button class="arcade-btn small secondary" id="main-menu">MAIN MENU</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="countdown-overlay hidden" id="countdown-overlay">
+            <div class="countdown-number" id="countdown-number">3</div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
+
