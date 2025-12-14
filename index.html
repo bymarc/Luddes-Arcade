@@ -114,10 +114,10 @@
 
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             width: 100%;
-            max-width: 800px;
+            max-width: 1000px;
         }
 
         .game-card {
@@ -178,6 +178,17 @@
             box-shadow: 
                 0 20px 40px rgba(76, 175, 80, 0.2),
                 0 0 60px rgba(76, 175, 80, 0.3);
+        }
+
+        .game-card.pop-click {
+            --accent: #FF6B6B;
+        }
+
+        .game-card.pop-click:hover {
+            border-color: var(--accent);
+            box-shadow: 
+                0 20px 40px rgba(255, 107, 107, 0.2),
+                0 0 60px rgba(255, 107, 107, 0.3);
         }
 
         .game-icon {
@@ -333,6 +344,21 @@
                     <span class="tag">1-2 Players</span>
                     <span class="tag">Racing</span>
                     <span class="tag">Power-ups</span>
+                </div>
+                <span class="play-btn">Play Now</span>
+            </a>
+
+            <a href="pop-click/index.html" class="game-card pop-click">
+                <span class="game-icon">🎯</span>
+                <h2 class="game-title">Pop & Click</h2>
+                <p class="game-description">
+                    Tap the targets as they pop up! Avoid bombs, collect power-ups, 
+                    and build combos in this fast-paced reflex game.
+                </p>
+                <div class="game-tags">
+                    <span class="tag">1 Player</span>
+                    <span class="tag">Mobile Ready</span>
+                    <span class="tag">Reflex</span>
                 </div>
                 <span class="play-btn">Play Now</span>
             </a>

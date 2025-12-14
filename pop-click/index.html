@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>🎯 Pop & Click - Tap Attack!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-screen" id="menu-screen">
+            <div class="menu-content">
+                <div class="menu-icon">🎯</div>
+                <h1>Pop & Click</h1>
+                <p class="tagline">Tap the targets, avoid the bombs!</p>
+                
+                <div class="menu-stats">
+                    <div class="stat-box">
+                        <span class="stat-label">High Score</span>
+                        <span class="stat-value" id="high-score">0</span>
+                    </div>
+                </div>
+                
+                <div class="difficulty-select">
+                    <button class="diff-btn active" data-difficulty="easy">😊 Easy</button>
+                    <button class="diff-btn" data-difficulty="medium">😎 Medium</button>
+                    <button class="diff-btn" data-difficulty="hard">🔥 Hard</button>
+                </div>
+                
+                <button class="play-btn" id="start-btn">
+                    <span>TAP TO PLAY</span>
+                </button>
+                
+                <a href="../index.html" class="back-link">← Back to Arcade</a>
+            </div>
+        </div>
+
+        <div class="game-screen hidden" id="game-screen">
+            <div class="game-hud">
+                <div class="hud-item score-display">
+                    <span class="hud-label">Score</span>
+                    <span class="hud-value" id="score">0</span>
+                </div>
+                <div class="hud-item timer-display">
+                    <span class="hud-label">Time</span>
+                    <span class="hud-value" id="timer">30</span>
+                </div>
+                <div class="hud-item combo-display">
+                    <span class="hud-label">Combo</span>
+                    <span class="hud-value" id="combo">x1</span>
+                </div>
+            </div>
+            
+            <div class="game-arena" id="game-arena">
+                <!-- Items spawn here -->
+            </div>
+            
+            <div class="active-effects" id="active-effects">
+                <!-- Active power-up indicators -->
+            </div>
+        </div>
+
+        <div class="game-screen hidden" id="result-screen">
+            <div class="result-content">
+                <div class="result-icon" id="result-icon">🏆</div>
+                <h2 id="result-title">Great Job!</h2>
+                <div class="result-stats">
+                    <div class="result-stat">
+                        <span class="label">Final Score</span>
+                        <span class="value" id="final-score">0</span>
+                    </div>
+                    <div class="result-stat">
+                        <span class="label">Targets Hit</span>
+                        <span class="value" id="targets-hit">0</span>
+                    </div>
+                    <div class="result-stat">
+                        <span class="label">Max Combo</span>
+                        <span class="value" id="max-combo">x1</span>
+                    </div>
+                    <div class="result-stat">
+                        <span class="label">Accuracy</span>
+                        <span class="value" id="accuracy">0%</span>
+                    </div>
+                </div>
+                <div class="result-record hidden" id="new-record">🎉 NEW HIGH SCORE! 🎉</div>
+                <div class="result-buttons">
+                    <button class="play-btn" id="play-again-btn">Play Again</button>
+                    <button class="menu-btn" id="menu-btn">Main Menu</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="countdown-overlay hidden" id="countdown">
+            <div class="countdown-number" id="countdown-number">3</div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
+
